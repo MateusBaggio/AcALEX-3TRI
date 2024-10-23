@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex2</title>
+</head>
+<body>
+    <h1>Exercício 2</h1>
+
+    <p>Um array armazena os valores das vendas diárias de uma loja. Para cada venda concretizada, o valor <br>
+        é armazenado. Quando o usuário digitar o valor -1, o programa deve exibir:
+    </p>
+    <ul>
+        <li>  • O valor da maior venda</li>
+        <li>• O valor da menor venda</li>
+        <li>• O valor da média das vendas</li>
+        <li> • A quantidade total de vendas realizadas no dia</li>
+    </ul>
+    
+
+    <script>
+            const vendas = [];
+i = 0;
+soma = 0;
+
+while(i >= 0){
+   i = parseFloat(prompt(`DIgite o valor da venda (digite -1 para encerrar)`));
+   vendas.push(i);
+}
+
+
+var ultimo = vendas[vendas.length - 1];
+
+if(ultimo === -1){
+    vendas.pop(ultimo);
+}
+
+vendas.forEach(venda  => {
+    soma+=venda;
+});
+
+
+valorMaximo = Math.max(...vendas);
+valorMinimo = Math.min(...vendas);
+
+
+alert("A maior venda foi de R$" + valorMaximo.toFixed(2));
+alert("A menor venda foi de R$" + valorMinimo.toFixed(2));
+alert((soma / vendas.length).toFixed(2));
+alert(vendas.length);
+
+    </script>
+</body>
+</html>
