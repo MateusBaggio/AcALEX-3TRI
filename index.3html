@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex3</title>
+</head>
+<body>
+    <h1>Exercício 3</h1>
+
+    <p>Crie dois arrays distintos: um para os Produtos e outro para as Quantidades. No array de Produtos,
+        armazene o nome de cada produto, e no array de Quantidades, armazene a quantidade<br>
+        correspondente. Assim, o produto em um índice terá a quantidade correspondente no mesmo índice<br>
+        do outro array. O usuário pode inserir os nomes dos produtos e suas quantidades até digitar o valor -
+        1. Quando isso ocorrer, o programa deve exibir:
+    </p>
+    <ul>
+        <li>O total de produtos inseridos</li>
+        <li>A quantidade total de itens no estoque</li>
+        <li>O nome do produto mais frequente (com a maior quantidade)</li>
+        <li>A quantidade total de um produto específico (o usuário deve informar qual produto deseja
+            consultar)</li>
+    </ul>
+    
+
+    <script>
+      const produtos = [];
+const quantidades = [];
+soma = 0;
+
+while (true) {
+    
+    const produto = prompt('Digite o nome do produto (digite "-1" para encerrar):');
+
+    if (produto === '-1') {
+        break;
+    }
+    
+    const quantidade = parseFloat(prompt('Digite a quantidade do produto (digite "-1" para encerrar):'));
+
+    if (quantidade === -1) {
+        break;
+    }
+
+    produtos.push(produto);
+    quantidades.push(quantidade);
+}
+
+
+alert('O total de produtos inserido foi:' + produtos.length);
+
+n = 0;
+indexDoMaior = 0;
+
+quantidades.forEach((quantidade, index) => {
+         soma+=quantidade;
+         if( n < quantidade){
+            n = quantidade;
+            indexDoMaior = index;
+         }
+
+     });
+
+alert('O número total de itens no estoque é de:' + soma);
+
+alert(produtos[indexDoMaior]);
+
+
+
+fala = prompt(`Digite o nome do produto`);
+
+x = produtos.indexOf(fala);
+
+if(x == null){
+    alert('Produto indisponível');
+}else{
+    alert(quantidades[x])
+}
+    </script>
+</body>
+</html>
